@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/home/maheshpujala/AndroidStudioProjects/OnlineStoreFragment/facebookandroidsdk4121aar_FILES/build/intermediates/res/merged/release/color/com_facebook_button_text_color.xml",
+        "source": "/home/maheshpujala/AndroidStudioProjects/OnlineStoreFragment/facebookandroidsdk4121aar_FILES/src/main/res/color/com_facebook_button_text_color.xml"
+    },
+    {
+        "merged": "/home/maheshpujala/AndroidStudioProjects/OnlineStoreFragment/facebookandroidsdk4121aar_FILES/build/intermediates/res/merged/release/color/com_facebook_send_button_text_color.xml",
+        "source": "/home/maheshpujala/AndroidStudioProjects/OnlineStoreFragment/facebookandroidsdk4121aar_FILES/src/main/res/color/com_facebook_send_button_text_color.xml"
+    }
+]
