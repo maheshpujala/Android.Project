@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "563725091830",
+    "project_id": "tshop-a3cbc"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:563725091830:android:58fbefd84d6b6bb1",
+        "android_client_info": {
+          "package_name": "com.example.maheshpujala.onlinestorefragment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "563725091830-1splp1iu155164q0ttpk46qupul82l15.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.maheshpujala.onlinestorefragment",
+            "certificate_hash": "C7941D63594C80FDB25248ADF02937E2835197CE"
+          }
+        },
+        {
+          "client_id": "563725091830-d0kl5httqoo4e3qlkahveibefl0tao28.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZ1JbllYTbRxf9QihDAvMrryp28djMtcU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
