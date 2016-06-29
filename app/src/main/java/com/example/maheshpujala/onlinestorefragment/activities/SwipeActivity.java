@@ -89,8 +89,8 @@ public class SwipeActivity extends NavigationDrawer implements View.OnClickListe
         {
             getData();
             setTabhost();
-            setSpinner();
-            setViewPager();
+        //    setSpinner();
+       //     setViewPager();
         }
         else{
             Snackbar.make(baseframe,"No Internet Connection", Snackbar.LENGTH_INDEFINITE)
@@ -139,7 +139,7 @@ public class SwipeActivity extends NavigationDrawer implements View.OnClickListe
             cost_price = json.getString(TAG_COST_PRICE);
             discount_tag = json.getString(TAG_DISCOUNT);
             JSONObject  master = json.getJSONObject(TAG_MASTER);
-            JSONArray images = master.getJSONArray("images");
+            JSONArray images = master.getJSONArray(TAG_IMAGES);
             JSONArray sizes_array = json.getJSONArray("variants");
 
 

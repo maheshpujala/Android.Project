@@ -213,7 +213,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
                             Intent returnIntent = getIntent();
-                            returnIntent.putExtra("jsondata", json_object.toString());
+                            returnIntent.putExtra("Fb_Details", json_object.toString());
                             setResult(Activity.RESULT_OK, returnIntent);
                             finish();
                         }

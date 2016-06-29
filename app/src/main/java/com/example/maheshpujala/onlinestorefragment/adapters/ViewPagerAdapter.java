@@ -40,7 +40,7 @@ public class ViewPagerAdapter extends PagerAdapter {
 //            int padding = context.getResources().getDimensionPixelSize(R.dimen.padding_medium);
 //            imageView.setPadding(padding, padding, padding, padding);
 //            imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
-        Picasso.with(context).load("http://192.168.3.48:2490"+product_image_url[position]).into(imageView);
+        Picasso.with(context).load(product_image_url[position]).into(imageView);
         //      imageView.setImageResource(mImages[position]);
         ((ViewPager) container).addView(imageView, 0);
         return imageView;
