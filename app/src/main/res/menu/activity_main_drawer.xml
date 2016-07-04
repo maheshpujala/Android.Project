@@ -4,15 +4,19 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/home"
-            android:icon="@drawable/home"
+            android:icon="@drawable/home_simple"
             android:title="Home" />
         <item
             android:id="@+id/my_account"
-            android:icon="@drawable/account"
+            android:icon="@drawable/account_simple"
             android:title="My Account" />
         <item
+            android:id="@+id/my_wishlist"
+            android:icon="@drawable/wishlist_simple"
+            android:title="My Wishlist" />
+        <item
             android:id="@+id/track_order"
-            android:icon="@drawable/truck"
+            android:icon="@drawable/track_simple2"
             android:title="Track Order" />
 
     </group>
@@ -20,12 +24,16 @@
     <item android:title="Communicate">
         <menu>
             <item
+                android:id="@+id/store_loc"
+                android:icon="@drawable/location_marker"
+                android:title="Store Locator" />
+            <item
                 android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
+                android:icon="@drawable/share_simple"
                 android:title="Share" />
             <item
                 android:id="@+id/login"
-                android:icon="@drawable/login"
+                android:icon="@drawable/login_simple"
                 android:title="Login" />
         </menu>
     </item>

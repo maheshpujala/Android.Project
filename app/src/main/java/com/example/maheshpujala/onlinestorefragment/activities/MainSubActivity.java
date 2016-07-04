@@ -3,6 +3,8 @@ package com.example.maheshpujala.onlinestorefragment.activities;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.support.design.widget.Snackbar;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -39,6 +41,7 @@ public class MainSubActivity extends NavigationDrawer implements View.OnClickLis
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         setNavigationHeader();
+        Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/FallingSkyCond.otf");
 
         results= (TextView)findViewById(R.id.results);
         sort =(Button)findViewById(R.id.sort_btn);
@@ -49,8 +52,9 @@ public class MainSubActivity extends NavigationDrawer implements View.OnClickLis
         popup = (LinearLayout)findViewById(R.id.popup_layout);
         checkConnection();
 
-
-    }
+        results.setTypeface(custom_font);
+        sort.setTypeface(custom_font);
+     }
 
     private void checkConnection() {
         if(NetworkCheck.isInternetAvailable(MainSubActivity.this))  //if connection available
@@ -62,13 +66,15 @@ public class MainSubActivity extends NavigationDrawer implements View.OnClickLis
         else{
             sort.setEnabled(false);
             filter.setEnabled(false);
-            Snackbar.make(baseframe,"No Internet Connection", Snackbar.LENGTH_INDEFINITE)
+            Snackbar snackbar =  Snackbar.make(baseframe,"No Internet Connection", Snackbar.LENGTH_INDEFINITE)
                     .setAction("Refresh", new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
                             checkConnection();
                         }
-                    }).show();
+                    });
+            snackbar.setActionTextColor(Color.RED);
+            snackbar.show();
         }
     }
 

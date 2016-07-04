@@ -4,6 +4,8 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.os.StrictMode;
@@ -25,9 +27,15 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.maheshpujala.onlinestorefragment.R;
 import com.example.maheshpujala.onlinestorefragment.adapters.ViewPagerAdapter;
-import com.example.maheshpujala.onlinestorefragment.api.JSONParser;
 import com.example.maheshpujala.onlinestorefragment.adapters.ListActivity;
 import com.example.maheshpujala.onlinestorefragment.adapters.NavigationDrawer;
 import com.example.maheshpujala.onlinestorefragment.api.NetworkCheck;
@@ -49,7 +57,6 @@ public class SwipeActivity extends NavigationDrawer implements View.OnClickListe
     // String text="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.";;
 
     //JSON Node Names
-
     private static final String TAG_NAME = "name";
     private static final String TAG_DESC = "description";
     private static final String TAG_PRICE = "price";
@@ -65,10 +72,10 @@ public class SwipeActivity extends NavigationDrawer implements View.OnClickListe
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getLayoutInflater().inflate(R.layout.swipe_view,baseframe);
-        if (android.os.Build.VERSION.SDK_INT > 9) {
-            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-            StrictMode.setThreadPolicy(policy);
-        }
+//        if (android.os.Build.VERSION.SDK_INT > 9) {
+//            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+//            StrictMode.setThreadPolicy(policy);
+//        }
 
 
         leftNav = (ImageButton) findViewById(R.id.left_nav);
@@ -87,20 +94,56 @@ public class SwipeActivity extends NavigationDrawer implements View.OnClickListe
     private void checkConnection() {
         if(NetworkCheck.isInternetAvailable(SwipeActivity.this))  //if connection available
         {
-            getData();
-            setTabhost();
-        //    setSpinner();
-       //     setViewPager();
+            sendRequest();
         }
         else{
-            Snackbar.make(baseframe,"No Internet Connection", Snackbar.LENGTH_INDEFINITE)
+            Snackbar snackbar =  Snackbar.make(baseframe,"No Internet Connection", Snackbar.LENGTH_INDEFINITE)
                     .setAction("Refresh", new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
                             checkConnection();
                         }
-                    }).show();
+                    });
+            snackbar.setActionTextColor(Color.RED);
+            snackbar.show();
         }
+    }
+
+    private void sendRequest() {
+//        RequestQueue queue = MyVolley.getRequestQueue();
+//        GsonRequest<MyClass> myReq = new GsonRequest<MyClass>(Request.Method.GET,
+//                "http://JSONURL/",
+//                SwipeActivity.class,
+//                createMyReqSuccessListener(),
+//                createMyReqErrorListener());
+//
+//        queue.add(myReq);
+
+// Instantiate the RequestQueue.
+        RequestQueue queue = Volley.newRequestQueue(this);
+        String url ="http://192.168.3.48:2490/api/v1/products/1.json?token=f64957cb4af203fcabbddefc170827d313f6ec48e3cc9e5d";
+// Request a JsonObject response from the provided URL.
+        JsonObjectRequest jsObjRequest = new JsonObjectRequest
+                (Request.Method.POST, url, null, new Response.Listener<JSONObject>() {
+
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        getData(response);
+                        setSpinner();
+                        setViewPager();
+                        setTabhost();
+                        Log.e("======================",response.toString());
+                    }
+                }, new Response.ErrorListener() {
+
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // TODO Auto-generated method stub
+
+                    }
+                });
+// Add the request to the RequestQueue.
+        queue.add(jsObjRequest);
     }
 
     private void setViewPager() {
@@ -124,13 +167,12 @@ public class SwipeActivity extends NavigationDrawer implements View.OnClickListe
 // Spinner click listener
         size_selector.setOnItemSelectedListener(this);
     }
-    private void getData() {
+    private void getData(JSONObject json) {
 
-        // Creating new JSON Parser
-        JSONParser jParser = new JSONParser();
-        // Getting JSON from URL
-        JSONObject json = jParser.getJSONFromUrl();
-
+//        // Creating new JSON Parser
+//        JSONParser jParser = new JSONParser();
+//        // Getting JSON from URL
+//        JSONObject json = jParser.getJSONFromUrl();
         try {
             // Storing  JSON item in a Variable
             name = json.getString(TAG_NAME);
@@ -143,8 +185,6 @@ public class SwipeActivity extends NavigationDrawer implements View.OnClickListe
             JSONArray sizes_array = json.getJSONArray("variants");
 
 
-            Log.e("TAG_MASTER",master.toString());
-            Log.e("images",images.toString());
              product_image_url =new String[images.length()];
              sizes =new String[sizes_array.length()];
 
@@ -159,8 +199,6 @@ public class SwipeActivity extends NavigationDrawer implements View.OnClickListe
                 sizes[i] = jsonobject.getString("size");
 
             }
-            Log.e("product_url", product_image_url[1]);
-            Log.e("sizes_array", sizes[2]);
 
             pname=(TextView)findViewById(R.id.productName);
             pname.setText(name);
@@ -180,10 +218,6 @@ public class SwipeActivity extends NavigationDrawer implements View.OnClickListe
             discount.setText(discount_tag);
 
          //   size_array = (TextView)findViewById(R.id.size_array);
-
-            Log.e("==========url========","http://192.168.3.48:2490"+ product_image_url[1]);
-
-
 
 
            } catch (JSONException e) {

@@ -1,9 +1,12 @@
 package com.example.maheshpujala.onlinestorefragment.activities;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentTabHost;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
@@ -24,24 +27,34 @@ public class HomeActivity extends NavigationDrawer{
 
         setNavigationHeader();
         checkConnection();
+
     }
 
+
     private void checkConnection() {
-        if(NetworkCheck.isInternetAvailable(HomeActivity.this))  //if connection available
-        {
-            setTabhost();
-            setGridView();
+        try {
+            if(NetworkCheck.isInternetAvailable(HomeActivity.this))  //if connection available
+            {
+                setTabhost();
+                setGridView();
+            }
+            else{
+                Snackbar snackbar =  Snackbar.make(baseframe,"No Internet Connection", Snackbar.LENGTH_INDEFINITE)
+                        .setAction("Refresh", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                checkConnection();
+                            }
+                        });
+                snackbar.setActionTextColor(Color.RED);
+                snackbar.show();
+            }
         }
-        else{
-            Snackbar.make(baseframe,"No Internet Connection", Snackbar.LENGTH_INDEFINITE)
-                    .setAction("Refresh", new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            checkConnection();
-                        }
-                    }).show();
+        catch( Exception e ) {
+            Log.e("NETWORK CHECK","EXCEPTION ", e );
         }
     }
+
 
     private void setGridView() {
         GridView gridView = (GridView) findViewById(R.id.view_men);

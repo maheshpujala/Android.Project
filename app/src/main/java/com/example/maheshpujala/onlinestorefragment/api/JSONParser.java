@@ -25,8 +25,8 @@ import org.json.JSONObject;
 
 public class JSONParser {
     //URL to get JSON Array
-   // private static String url ="http://192.168.3.48:2490/api/products/1.json?token=f64957cb4af203fcabbddefc170827d313f6ec48e3cc9e5d";
-    private static String url ="http://192.168.3.48:2490/api/v1/products/7?token=f64957cb4af203fcabbddefc170827d313f6ec48e3cc9e5d";
+   private static String url ="http://192.168.3.48:2490/api/v1/products/1.json?token=f64957cb4af203fcabbddefc170827d313f6ec48e3cc9e5d";
+  //  private static String url ="http://192.168.3.48:2490/api/v1/products/7?token=f64957cb4af203fcabbddefc170827d313f6ec48e3cc9e5d";
     static InputStream is = null;
     static JSONObject jObj = null;
     static String json = "";

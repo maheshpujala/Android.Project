@@ -46,8 +46,8 @@ public class NavigationDrawer extends AppCompatActivity implements NavigationVie
     private SearchView mSearchView;
     private MenuItem searchMenuItem, mycart;
     protected FrameLayout baseframe;
-    public static final String PREFS_LOGIN_USERNAME_KEY = "__USERNAME__" ;
-    public static final String PREFS_LOGIN_EMAIL_KEY = "__EMAIL__" ;
+    public static final String PREFS_LOGIN_USERNAME_KEY = "Welcome" ;
+    public static final String PREFS_LOGIN_EMAIL_KEY = "Guest User" ;
 
 
 
