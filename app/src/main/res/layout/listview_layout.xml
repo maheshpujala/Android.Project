@@ -12,16 +12,4 @@
         android:paddingRight="20dp"
         android:id="@+id/main"
         android:layout_weight="1"/>
-
-     <TextView
-         android:layout_width="100dp"
-         android:layout_height="30dp"
-         android:background="@drawable/buttonshape"
-         android:gravity="center"
-         android:paddingLeft="20dp"
-         android:paddingRight="20dp"
-         android:layout_marginRight="20dp"
-         android:text="Only 13 lefteee"
-         android:id="@+id/sub"
-         android:layout_weight="0.24"/>
  </LinearLayout>

@@ -2,6 +2,8 @@ package com.example.maheshpujala.onlinestorefragment.activities;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -41,7 +43,6 @@ public class LoginActivity extends AppCompatActivity {
     private AutoCompleteTextView mEmailView;
     private EditText mPasswordView;
     private View mProgressView;
-    private View mLoginFormView;
     // UI references.
     private SignInButton mGoogleSignInButton;
     private LoginButton mFacebookSignInButton;
@@ -54,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         facebookSDKInitialize();
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.test);
 
         // Set Up Social Logins
         mFacebookSignInButton = (LoginButton) findViewById(R.id.login_button);
@@ -80,8 +81,6 @@ public class LoginActivity extends AppCompatActivity {
                 attemptLogin();
             }
         });
-        mLoginFormView = findViewById(R.id.login_form);
-        mProgressView = findViewById(R.id.login_progress);
     }
 
     /*
@@ -213,7 +212,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
                             Intent returnIntent = getIntent();
-                            returnIntent.putExtra("jsondata", json_object.toString());
+                            returnIntent.putExtra("Fb_Details", json_object.toString());
                             setResult(Activity.RESULT_OK, returnIntent);
                             finish();
                         }

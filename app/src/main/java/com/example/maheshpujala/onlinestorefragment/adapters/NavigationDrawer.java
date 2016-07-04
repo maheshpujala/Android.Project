@@ -27,7 +27,9 @@ import android.widget.Toast;
 import com.example.maheshpujala.onlinestorefragment.R;
 import com.example.maheshpujala.onlinestorefragment.activities.HomeActivity;
 import com.example.maheshpujala.onlinestorefragment.activities.LoginActivity;
+import com.example.maheshpujala.onlinestorefragment.activities.MainSubActivity;
 import com.example.maheshpujala.onlinestorefragment.api.NetworkCheck;
+import com.example.maheshpujala.onlinestorefragment.cache.PrefUtils;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONObject;
@@ -44,6 +46,11 @@ public class NavigationDrawer extends AppCompatActivity implements NavigationVie
     private SearchView mSearchView;
     private MenuItem searchMenuItem, mycart;
     protected FrameLayout baseframe;
+    public static final String PREFS_LOGIN_USERNAME_KEY = "Welcome" ;
+    public static final String PREFS_LOGIN_EMAIL_KEY = "Guest User" ;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +60,7 @@ public class NavigationDrawer extends AppCompatActivity implements NavigationVie
         setSupportActionBar(toolbar);
         baseframe=(FrameLayout)findViewById(R.id.base_frame);
         // toolbar.setLogo(R.mipmap.ic_launcher);
+
     }
     /*
           Set Navigation header
@@ -69,6 +77,15 @@ public class NavigationDrawer extends AppCompatActivity implements NavigationVie
         View hView =  navigationView.getHeaderView(0);
         email = (TextView)hView.findViewById(R.id.emailView);
         name = (TextView)hView.findViewById(R.id.nameView);
+
+        // To retrieve values back
+        String loggedInUserName = PrefUtils.getFromPrefs(NavigationDrawer.this, PREFS_LOGIN_USERNAME_KEY,PREFS_LOGIN_USERNAME_KEY);
+        String loggedInUserEmail= PrefUtils.getFromPrefs(NavigationDrawer.this, PREFS_LOGIN_EMAIL_KEY,PREFS_LOGIN_EMAIL_KEY);
+if(loggedInUserName!=null){
+    email.setText(loggedInUserEmail);
+    name.setText(loggedInUserName);
+    Log.e("User DETAILS SET", loggedInUserEmail);
+}
     }
     @Override
     public void onBackPressed() {
@@ -173,21 +190,29 @@ public class NavigationDrawer extends AppCompatActivity implements NavigationVie
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == 1) {
             if (resultCode == Activity.RESULT_OK) {
-                if (data.hasExtra("jsondata")) {
-                    jsondata = data.getStringExtra("jsondata");
+                if (data.hasExtra("Fb_Details")) {
+                    jsondata = data.getStringExtra("Fb_Details");
 
                     try {
                         response = new JSONObject(jsondata);
-                        Log.e("jason", jsondata);
+                        Log.e("Fb_Details", jsondata);
                         String id = response.get("id").toString();
-                        email.setText(response.get("email").toString());
-                        name.setText(response.get("name").toString());
+                        String fb_email=response.get("email").toString();
+                        String fb_name=response.get("name").toString();
+
+                        email.setText(fb_email);
+                        name.setText(fb_name);
                         //profile_pic_data = new JSONObject(response.get("picture").toString());
                         //  profile_pic_url = new JSONObject(profile_pic_data.getString("data"));
                         // URL image_value = new URL("https://graph.facebook.com/"+id+"/picture" );
                         // Bitmap  profPict = BitmapFactory.decodeStream(image_value.openConnection().getInputStream());
                         //   profilepic.setImageBitmap(profPict);
 
+
+                        // Saving user credentials on successful login case
+                        PrefUtils.saveToPrefs(NavigationDrawer.this, PREFS_LOGIN_USERNAME_KEY, fb_name);
+                        PrefUtils.saveToPrefs(NavigationDrawer.this, PREFS_LOGIN_EMAIL_KEY, fb_email);
+                        Log.e("User DETAILS get", fb_name);
 
                         //Picasso.with(this).load("https://graph.facebook.com/" + id + "/picture?type=large").into(profilepic);
 
@@ -197,10 +222,15 @@ public class NavigationDrawer extends AppCompatActivity implements NavigationVie
                 }
                 if (data.hasExtra("pname")){
                     Log.e("pname","google sucess");
-                    name.setText(data.getStringExtra("pname"));
-                    email.setText(data.getStringExtra("pemail"));
+                    String g_name=data.getStringExtra("pname");
+                    String g_email=data.getStringExtra("pemail");
+                    name.setText(g_name);
+                    email.setText(g_email);
                   //  Picasso.with(this).load(data.getStringExtra("pphoto")).resize(200, 200).into(profilepic);
-
+                    // Saving user credentials on successful login case
+                    PrefUtils.saveToPrefs(NavigationDrawer.this, PREFS_LOGIN_USERNAME_KEY, g_name);
+                    PrefUtils.saveToPrefs(NavigationDrawer.this, PREFS_LOGIN_EMAIL_KEY, g_email);
+                    Log.e("User DETAILS get", g_name);
 
 
 
