@@ -8,11 +8,13 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.maheshpujala.onlinestorefragment.R;
@@ -42,7 +44,7 @@ import java.util.concurrent.Callable;
 public class LoginActivity extends AppCompatActivity {
     private AutoCompleteTextView mEmailView;
     private EditText mPasswordView;
-    private View mProgressView;
+    private String gtext;
     // UI references.
     private SignInButton mGoogleSignInButton;
     private LoginButton mFacebookSignInButton;
@@ -55,13 +57,15 @@ public class LoginActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         facebookSDKInitialize();
-        setContentView(R.layout.test);
+        setContentView(R.layout.activity_login);
 
         // Set Up Social Logins
         mFacebookSignInButton = (LoginButton) findViewById(R.id.login_button);
         getLoginDetails(mFacebookSignInButton);
 
         mGoogleSignInButton = (SignInButton) findViewById(R.id.sign_in_button);
+        gtext="Login with Google";
+        setGooglePlusButtonText(mGoogleSignInButton,gtext);
         mGoogleSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -82,6 +86,22 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+    protected void setGooglePlusButtonText(SignInButton signInButton,
+                                           String buttonText) {
+        for (int i = 0; i < signInButton.getChildCount(); i++) {
+            View v = signInButton.getChildAt(i);
+
+            if (v instanceof TextView) {
+                TextView tv = (TextView) v;
+                tv.setTextSize(15);
+                tv.setTypeface(null, Typeface.NORMAL);
+                tv.setText(buttonText);
+                tv.setGravity(Gravity.CENTER);
+                return;
+            }
+        }
+    }
+
 
     /*
       Initialize the facebook sdk and then callback manager will handle the login responses.
