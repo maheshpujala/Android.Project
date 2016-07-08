@@ -7,18 +7,10 @@
     <string name="action_cart">My Cart</string>
     <string name="search_hint">Type and Search</string>
     <string name="menu_search">Search</string>
-    <string-array name="Planets">
-        <item>Sun</item>
-        <item>Mercury</item>
-        <item>Venus</item>
-        <item>Earth</item>
-        <item>Mars</item>
-        <item>Jupiter</item>
-        <item>Saturn</item>
-        <item>Uranus</item>
-        <item>Neptune</item>
-    </string-array>
-    <string name="title_activity_login">Sign in</string>
+    <string name="size">Select Size</string>
+    <string name="quantity">Select Quantity</string>
+
+
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
@@ -33,12 +25,8 @@
         completions."
     </string>
 
-
     <string name="facebook_app_id">1775827315994349</string>
     <string name="login_error">Error While Login</string>
 
-
-    <string name="sel"> <u>Select Size</u> </string>
     <string name="URL">http://192.168.3.48:2490/api/v1/products/7?token=f64957cb4af203fcabbddefc170827d313f6ec48e3cc9e5d</string>
-
 </resources>

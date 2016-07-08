@@ -19,12 +19,16 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.maheshpujala.onlinestorefragment.R;
+import com.example.maheshpujala.onlinestorefragment.activities.CartActivity;
 import com.example.maheshpujala.onlinestorefragment.activities.HomeActivity;
 import com.example.maheshpujala.onlinestorefragment.activities.LoginActivity;
 import com.example.maheshpujala.onlinestorefragment.activities.MainSubActivity;
@@ -40,7 +44,7 @@ import org.json.JSONObject;
 public class NavigationDrawer extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     Toolbar toolbar;
     ImageView profilepic,refresh_action;
-    TextView name, email;
+    TextView name, email,cart_count;
     JSONObject response, profile_pic_data, profile_pic_url;
     String jsondata;
     private SearchView mSearchView;
@@ -102,6 +106,23 @@ if(loggedInUserName!=null){
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.action_bar_icons, menu);
         mycart = menu.findItem(R.id.action_cart);
+        //==================================
+        MenuItemCompat.setActionView(mycart, R.layout.cart_badge);
+
+        RelativeLayout notifCount = (RelativeLayout) MenuItemCompat.getActionView(mycart);
+        ImageView ib = (ImageView)notifCount.findViewById(R.id.image_badge);
+        TextView tv = (TextView) notifCount.findViewById(R.id.actionbar_notifcation_textview);
+
+        ib.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i("ImageView","Clicked");
+                Intent mycart = new Intent(getApplicationContext(), CartActivity.class);
+                mycart.putExtra("cart_value", String.valueOf(cart_count));
+                startActivityForResult(mycart, 3);
+
+            }
+        });
         searchMenuItem = menu.findItem(R.id.action_search);
         // Associate searchable configuration with the SearchView
         mSearchView = (SearchView) searchMenuItem.getActionView();
@@ -126,7 +147,7 @@ if(loggedInUserName!=null){
                         return true;
                     }
                 });
-        return true;
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
@@ -134,11 +155,15 @@ if(loggedInUserName!=null){
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+        int id = item.getOrder();
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_search) {
-            mycart.setVisible(false);
+           // mycart.setVisible(false);
+            return true;
+        }
+        if (id == R.id.actionbar_notifcation_textview ) {
+
             return true;
         }
 

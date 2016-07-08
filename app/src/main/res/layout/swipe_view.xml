@@ -111,22 +111,26 @@
                     android:layout_height="match_parent"
                     android:gravity="center">
 
-                    <TextView
-                        android:id="@+id/avail_size"
-                        android:text="AVAILABLE SIZES"
-                        android:layout_margin="10dp"
-                        android:layout_weight="1"
+                    <Spinner
+                        android:background="@drawable/spinner_border"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:popupBackground="#6d6d6d"
+                        android:layout_weight="1"
+                        android:spinnerMode="dialog"
+                        android:prompt="@string/size"
+                        android:gravity="center_horizontal"
+                        android:id="@+id/select_size" />
                     <Spinner
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
+                        android:layout_margin="20dp"
                         android:layout_weight="1"
-                        android:textAlignment="center"
+                        android:spinnerMode="dialog"
+                        android:prompt="@string/quantity"
                         android:gravity="center_horizontal"
-                        android:id="@+id/select_size" />
+                        android:id="@+id/select_quantity" />
 
 
                 </LinearLayout>
