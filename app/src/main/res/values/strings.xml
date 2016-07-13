@@ -9,7 +9,8 @@
     <string name="menu_search">Search</string>
     <string name="size">Select Size</string>
     <string name="quantity">Select Quantity</string>
-
+    <string name="product_list">Product List</string>
+    <string name="shopping_cart">Shopping Cart</string>
 
 
     <!-- Strings related to login -->
