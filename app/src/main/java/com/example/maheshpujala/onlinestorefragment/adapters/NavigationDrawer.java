@@ -43,15 +43,17 @@ import org.json.JSONObject;
  */
 public class NavigationDrawer extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     Toolbar toolbar;
-    ImageView profilepic,refresh_action;
-    TextView name, email,cart_count;
+    ImageView profilepic,refresh_action,ib;
+    TextView name, email,tv;
     JSONObject response, profile_pic_data, profile_pic_url;
     String jsondata;
+    Integer count;
     private SearchView mSearchView;
     private MenuItem searchMenuItem, mycart;
     protected FrameLayout baseframe;
     public static final String PREFS_LOGIN_USERNAME_KEY = "Welcome" ;
     public static final String PREFS_LOGIN_EMAIL_KEY = "Guest User" ;
+    RelativeLayout  notifCount;
 
 
 
@@ -91,6 +93,8 @@ if(loggedInUserName!=null){
     Log.e("User DETAILS SET", loggedInUserEmail);
 }
     }
+
+
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -103,23 +107,27 @@ if(loggedInUserName!=null){
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        String className =  this.getLocalClassName();
+        Log.e("setNavigation=====",className);
+
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.action_bar_icons, menu);
         mycart = menu.findItem(R.id.action_cart);
         //==================================
         MenuItemCompat.setActionView(mycart, R.layout.cart_badge);
 
-        RelativeLayout notifCount = (RelativeLayout) MenuItemCompat.getActionView(mycart);
-        ImageView ib = (ImageView)notifCount.findViewById(R.id.image_badge);
-        TextView tv = (TextView) notifCount.findViewById(R.id.actionbar_notifcation_textview);
-
+        final RelativeLayout notifCount = (RelativeLayout) MenuItemCompat.getActionView(mycart);
+        ib = (ImageView)notifCount.findViewById(R.id.image_badge);
+        TextView tv = (TextView) notifCount.findViewById(R.id.item_count);
+        count= Integer.valueOf(tv.getText().toString());
         ib.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.i("ImageView","Clicked");
                 Intent mycart = new Intent(getApplicationContext(), CartActivity.class);
-                mycart.putExtra("cart_value", String.valueOf(cart_count));
+                mycart.putExtra("cart_value",count);
                 startActivityForResult(mycart, 3);
+
 
             }
         });
@@ -148,6 +156,8 @@ if(loggedInUserName!=null){
                     }
                 });
         return super.onCreateOptionsMenu(menu);
+
+
     }
 
     @Override
@@ -162,7 +172,7 @@ if(loggedInUserName!=null){
            // mycart.setVisible(false);
             return true;
         }
-        if (id == R.id.actionbar_notifcation_textview ) {
+        if (id == R.id.item_count) {
 
             return true;
         }

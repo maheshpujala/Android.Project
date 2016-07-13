@@ -19,14 +19,14 @@
 
     <!-- Badge Count -->
     <TextView
-        android:id="@+id/actionbar_notifcation_textview"
+        android:id="@+id/item_count"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_alignParentRight="true"
         android:textColor="@android:color/white"
         android:gravity="center"
         android:textSize="12sp"
-        android:text="55"
+        android:text="3"
         android:clickable="false"
         android:background="@drawable/shape_notification"
         android:layout_marginRight="5dp" />

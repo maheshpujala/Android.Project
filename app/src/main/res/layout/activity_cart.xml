@@ -1,18 +1,29 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.maheshpujala.onlinestorefragment.activities.CartActivity">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/tvProductListHeader"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="New Text"
-        android:id="@+id/count" />
+        android:background="@color/darkgrey"
+        android:gravity="center"
+        android:paddingBottom="@dimen/common_padding"
+        android:paddingTop="@dimen/common_padding"
+        android:text="@string/product_list"
+        android:textColor="@color/white"
+        android:textAllCaps="true"
+        android:textSize="@dimen/header_text_size"
+        android:textStyle="bold"/>
 
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/image1"
-        android:id="@+id/imageButton"
-        android:layout_gravity="right" />
-</LinearLayout>
+    <ListView
+        android:id="@+id/lvProducts"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/tvProductListHeader"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+</RelativeLayout>
