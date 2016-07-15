@@ -111,7 +111,6 @@ public class MainSubActivity extends NavigationDrawer implements View.OnClickLis
     public void popup(){
         // custom dialog
         String [] options={"Popular","Price:Lowest First","Price:Highest First","Most Viewed","Most Sold","Discount"};
-        String check="sort";
         final Dialog dialog = new Dialog(this);
         dialog.setContentView(R.layout.activity_popup);
         dialog.setTitle("        Sorting Options");
@@ -129,7 +128,7 @@ public class MainSubActivity extends NavigationDrawer implements View.OnClickLis
 
         dialog_ListView = (ListView)dialog.findViewById(R.id.dialog_list);
 
-        dialog_ListView.setAdapter(new ListActivity(this,options,check));
+        dialog_ListView.setAdapter(new ListActivity(this,options));
 
         dialog_ListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

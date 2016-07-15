@@ -109,31 +109,75 @@
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="center">
+                    android:layout_margin="5dp">
 
-                    <Spinner
-                        android:background="@drawable/spinner_border"
-                        android:layout_width="match_parent"
+
+                    <TextView
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_margin="20dp"
-                        android:popupBackground="#6d6d6d"
-                        android:layout_weight="1"
-                        android:spinnerMode="dialog"
-                        android:prompt="@string/size"
-                        android:gravity="center_horizontal"
-                        android:id="@+id/select_size" />
-                    <Spinner
-                        android:layout_width="match_parent"
+                        android:text="Select Size:"
+                        android:id="@+id/size"
+                        android:gravity="left"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_margin="20dp"
-                        android:layout_weight="1"
-                        android:spinnerMode="dialog"
-                        android:prompt="@string/quantity"
-                        android:gravity="center_horizontal"
-                        android:id="@+id/select_quantity" />
-
-
+                        android:text="Size Chart"
+                        android:id="@+id/size_chart"
+                        android:gravity="right"
+                        android:layout_weight="1"/>
                 </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:clickable="true"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:gravity="center"
+                        android:background="@drawable/test"
+                        android:layout_margin="5dp"
+                        android:text="S"
+                        android:id="@+id/size_s" />
+                    <Button
+
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:gravity="center"
+                        android:background="@drawable/test"
+                        android:layout_margin="5dp"
+                        android:text="M"
+                        android:id="@+id/size_m" />
+                    <Button
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:gravity="center"
+                        android:background="@drawable/test"
+                        android:layout_margin="5dp"
+                        android:text="L"
+                        android:id="@+id/size_l" />
+                    <Button
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:gravity="center"
+                        android:background="@drawable/test"
+                        android:layout_margin="5dp"
+                        android:text="XL"
+                        android:id="@+id/size_xl" />
+                    <Button
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:gravity="center"
+                        android:background="@drawable/test"
+                        android:layout_margin="5dp"
+                        android:text="XXL"
+                        android:id="@+id/size_xxl" />
+                </LinearLayout>
+
                 <TextView
                     android:id="@+id/divider2"
                     android:layout_width="match_parent"

@@ -18,49 +18,27 @@ import com.facebook.internal.BoltsMeasurementEventListener;
 public class ListActivity extends ArrayAdapter<String> {
     private  String[] web;
     private final Activity context;
-    private  String check;
-    private int count;
 
-    public ListActivity(Activity context, String[] web,String check) {
+    public ListActivity(Activity context, String[] web) {
         super(context, R.layout.listview_layout,web);
         this.context = context;
         this.web = web;
-        this.check=check;
         Log.e("sort","=======clicked======");
-
-    }
-    public ListActivity(Activity context,int count,String check) {
-        super(context, R.layout.adapter_product);
-        this.context=context;
-        this.check=check;
-        this.count=count;
-
-
     }
 
-    @Override
-    public int getCount() {
-        return count;
-    }
 
 
     @Override
     public View getView(int position, View view, ViewGroup parent) {
         View rowView;
 
-        if (check.contains("mycart") ){
-            LayoutInflater inflater = context.getLayoutInflater();
-            rowView=inflater.inflate(R.layout.adapter_product,null,true);
-            TextView primary = (TextView) rowView.findViewById(R.id.tvProductName);
-            primary.setText("Hello World");
 
-        }else{
+
             LayoutInflater inflater = context.getLayoutInflater();
             rowView = inflater.inflate(R.layout.listview_layout, null, true);
             TextView primary = (TextView) rowView.findViewById(R.id.main);
             primary.setText(web[position]);
 
-        }
         return rowView;
     }
 }

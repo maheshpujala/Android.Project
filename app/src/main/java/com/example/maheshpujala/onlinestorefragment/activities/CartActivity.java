@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.maheshpujala.onlinestorefragment.R;
+import com.example.maheshpujala.onlinestorefragment.adapters.CartAdapter;
 import com.example.maheshpujala.onlinestorefragment.adapters.GridAdapter;
 import com.example.maheshpujala.onlinestorefragment.adapters.ListActivity;
 import com.example.maheshpujala.onlinestorefragment.adapters.NavigationDrawer;
@@ -38,14 +39,16 @@ public class CartActivity extends AppCompatActivity {
 
         ListView Products = (ListView) findViewById(R.id.lvProducts);
         // lvProducts.addHeaderView(getLayoutInflater().inflate(R.layout.product_list_header, lvProducts, false));
-        Products.setAdapter(new ListActivity(this,item_count,cart));
-        Products.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        if (Products != null) {
+            Products.setAdapter(new CartAdapter(this,item_count));
 
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view,
-                                    int position, long id) {
-                Toast.makeText(getApplicationContext(),"HIiiiiiiiiiiii",Toast.LENGTH_LONG).show();
-                //  Product product = Constant.PRODUCT_LIST.get(position - 1);
+            Products.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view,
+                                        int position, long id) {
+                    Toast.makeText(getApplicationContext(),"HIiiiiiiiiiiii",Toast.LENGTH_LONG).show();
+                    //  Product product = Constant.PRODUCT_LIST.get(position - 1);
 
              /*   Intent intent = new Intent(MainActivity.this, ProductActivity.class);
                 Bundle bundle = new Bundle();
@@ -53,8 +56,10 @@ public class CartActivity extends AppCompatActivity {
                 Log.d(TAG, "View product: " + product.getName());
                 intent.putExtras(bundle);
                 startActivity(intent);*/
-            }
-        });
+                }
+            });
+        }
+
 
     }
     @Override

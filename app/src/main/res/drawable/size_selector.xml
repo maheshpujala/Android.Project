@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item android:drawable="@drawable/size_select"
+        android:state_selected="true"/>
+
+    <!--<item android:state_hovered="true"-->
+        <!--android:drawable="@color/orange" />-->
+
+    <!--<item android:state_enabled="true" android:state_selected="true"-->
+        <!--android:drawable="@drawable/size_select" />-->
+    <!--<item android:state_enabled="true" android:state_selected="false"-->
+        <!--android:drawable="@drawable/size_disable" />-->
+
+    <!--<item android:state_checkable="true"-->
+        <!--android:drawable="@color/com_facebook_messenger_blue" />-->
+
+    <!--<item android:state_checked="true"-->
+        <!--android:drawable="@color/com_facebook_button_background_color_pressed" />-->
+    <!--<item android:state_activated="true"-->
+        <!--android:drawable="@color/colorAccent" />-->
+
+    <item  android:drawable="@drawable/size_disable" />
+
+
+</selector>

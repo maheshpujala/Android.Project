@@ -1,27 +1,20 @@
 package com.example.maheshpujala.onlinestorefragment.activities;
 
-import android.app.Dialog;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.Bundle;
-import android.os.StrictMode;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TabHost;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -32,14 +25,11 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.maheshpujala.onlinestorefragment.R;
 import com.example.maheshpujala.onlinestorefragment.adapters.ViewPagerAdapter;
-import com.example.maheshpujala.onlinestorefragment.adapters.ListActivity;
 import com.example.maheshpujala.onlinestorefragment.adapters.NavigationDrawer;
 import com.example.maheshpujala.onlinestorefragment.api.NetworkCheck;
-import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -53,7 +43,9 @@ public class SwipeActivity extends NavigationDrawer implements View.OnClickListe
     ImageButton leftNav,rightNav;
     ImageView imageView,testimg;
     Spinner size_selector;
-    TextView pname,description,discount,sellingPrice,actualPrice,size_array;
+    TextView pname,description,discount,sellingPrice,actualPrice,size_desc;
+    Button b1,size_s,size_m,size_l,size_xl,size_xxl;
+    String s;
     // String text="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.";;
 
     //JSON Node Names
@@ -76,7 +68,15 @@ public class SwipeActivity extends NavigationDrawer implements View.OnClickListe
 //            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 //            StrictMode.setThreadPolicy(policy);
 //        }
+        size_desc= (TextView)findViewById(R.id.size);
 
+        size_s = (Button)findViewById(R.id.size_s);
+        size_m = (Button)findViewById(R.id.size_m);
+        size_l = (Button)findViewById(R.id.size_l);
+
+        size_xl = (Button)findViewById(R.id.size_xl);
+
+        size_xxl = (Button)findViewById(R.id.size_xxl);
 
         leftNav = (ImageButton) findViewById(R.id.left_nav);
         rightNav = (ImageButton) findViewById(R.id.right_nav);
@@ -84,7 +84,11 @@ public class SwipeActivity extends NavigationDrawer implements View.OnClickListe
         leftNav.setOnClickListener(this);
         rightNav.setOnClickListener(this);
         share.setOnClickListener(this);
-
+        size_s.setOnClickListener(this);
+        size_m.setOnClickListener(this);
+        size_l.setOnClickListener(this);
+        size_xl.setOnClickListener(this);
+        size_xxl.setOnClickListener(this);
         testimg=(ImageView)findViewById(R.id.testimage);
         checkConnection();
 
@@ -129,7 +133,7 @@ public class SwipeActivity extends NavigationDrawer implements View.OnClickListe
                     @Override
                     public void onResponse(JSONObject response) {
                         getData(response);
-                        setSpinner();
+                       // setSpinner();
                         setViewPager();
                         setTabhost();
                         Log.e("======================",response.toString());
@@ -155,18 +159,18 @@ public class SwipeActivity extends NavigationDrawer implements View.OnClickListe
         viewPager.setAdapter(adapter);
     }
 
-    private void setSpinner() {
-        // Spinner element
-        size_selector =(Spinner) findViewById(R.id.select_size);
-// Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<String> adapter =new  ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,sizes);
-// Specify the layout to use when the list of choices appears
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-// Apply the adapter to the spinner
-        size_selector.setAdapter(adapter);
-// Spinner click listener
-        size_selector.setOnItemSelectedListener(this);
-    }
+//    private void setSpinner() {
+//        // Spinner element
+//        size_selector =(Spinner) findViewById(R.id.select_size);
+//// Create an ArrayAdapter using the string array and a default spinner layout
+//        ArrayAdapter<String> adapter =new  ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,sizes);
+//// Specify the layout to use when the list of choices appears
+//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//// Apply the adapter to the spinner
+//        size_selector.setAdapter(adapter);
+//// Spinner click listener
+//        size_selector.setOnItemSelectedListener(this);
+//    }
     private void getData(JSONObject json) {
 
 //        // Creating new JSON Parser
@@ -284,9 +288,47 @@ public class SwipeActivity extends NavigationDrawer implements View.OnClickListe
                 viewPager.setCurrentItem(tabb);
                 break;
 
+            case R.id.size_s:
+                Toast.makeText(getApplicationContext(),"Size S is clicked",Toast.LENGTH_LONG).show();
+                size_s.setBackgroundResource(R.drawable.size_select);
+                size_m.setBackgroundResource(R.drawable.size_disable);
+
+                Log.e("Size s ","Clciked");
+                s=size_s.getText().toString();
+                setSizeText(s);
+                break;
+            case R.id.size_m:
+                Toast.makeText(getApplicationContext(),"Size M is clicked",Toast.LENGTH_LONG).show();
+                size_m.setBackgroundResource(R.drawable.size_select);
+                size_s.setBackgroundResource(R.drawable.size_disable);
+
+                s=size_m.getText().toString();
+                setSizeText(s);
+                break;
+            case R.id.size_l:
+                Toast.makeText(getApplicationContext(),"Size l is clicked",Toast.LENGTH_LONG).show();
+                s=size_l.getText().toString();
+                setSizeText(s);
+                break;
+            case R.id.size_xl:
+                Toast.makeText(getApplicationContext(),"Size xl is clicked",Toast.LENGTH_LONG).show();
+                s=size_xl.getText().toString();
+                setSizeText(s);
+                break;
+            case R.id.size_xxl:
+                Toast.makeText(getApplicationContext(),"Size xxl is clicked",Toast.LENGTH_LONG).show();
+                s=size_xxl.getText().toString();
+                setSizeText(s);
+                break;
+
         }
 
     }
+
+    private void setSizeText(String size) {
+        size_desc.setText("Size :"+size);
+    }
+
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
