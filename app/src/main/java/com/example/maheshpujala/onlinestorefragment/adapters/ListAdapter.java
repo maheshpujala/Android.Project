@@ -18,14 +18,11 @@ import com.facebook.internal.BoltsMeasurementEventListener;
 public class ListAdapter extends ArrayAdapter<String> {
     private  String[] web;
     private final Activity context;
-    private  String sort;
 
-    public ListAdapter(Activity context, String[] web, String sort) {
+    public ListAdapter(Activity context, String[] web) {
         super(context, R.layout.listview_layout,web);
         this.context = context;
         this.web = web;
-        this.sort=sort;
-        Log.e("Sort Clicked",sort);
 
     }
 

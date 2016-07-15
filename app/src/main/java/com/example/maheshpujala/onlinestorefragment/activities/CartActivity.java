@@ -1,25 +1,17 @@
 package com.example.maheshpujala.onlinestorefragment.activities;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.maheshpujala.onlinestorefragment.R;
 import com.example.maheshpujala.onlinestorefragment.adapters.CartAdapter;
-import com.example.maheshpujala.onlinestorefragment.adapters.GridAdapter;
-import com.example.maheshpujala.onlinestorefragment.adapters.ListActivity;
-import com.example.maheshpujala.onlinestorefragment.adapters.NavigationDrawer;
-import com.example.maheshpujala.onlinestorefragment.adapters.ProductAdapter;
 
 /**
  * Created by maheshpujala on 4/7/16.
