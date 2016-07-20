@@ -18,7 +18,6 @@ import com.example.maheshpujala.onlinestorefragment.adapters.ListAdapter;
  * Created by maheshpujala on 4/7/16.
  */
 public class CartActivity extends AppCompatActivity {
-    String cart="mycart";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

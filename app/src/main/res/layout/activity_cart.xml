@@ -26,4 +26,16 @@
         android:layout_below="@id/tvProductListHeader"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
+
+    <Button
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#329A5D"
+        android:text="Place Order"
+        android:textColor="#FFF"
+        android:textStyle="bold"
+        android:id="@+id/button"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

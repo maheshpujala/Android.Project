@@ -25,6 +25,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.maheshpujala.onlinestorefragment.R;
+import com.example.maheshpujala.onlinestorefragment.adapters.SpinnerAdapter;
 import com.example.maheshpujala.onlinestorefragment.adapters.ViewPagerAdapter;
 import com.example.maheshpujala.onlinestorefragment.adapters.NavigationDrawer;
 import com.example.maheshpujala.onlinestorefragment.api.NetworkCheck;
@@ -32,6 +33,11 @@ import com.example.maheshpujala.onlinestorefragment.api.NetworkCheck;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+
 /**
  * Created by maheshpujala on 13/6/16.
  */
@@ -40,7 +46,7 @@ public class SwipeActivity extends NavigationDrawer implements View.OnClickListe
     PagerAdapter adapter;
     ImageButton leftNav,rightNav;
     ImageView imageView,testimg;
-    Spinner size_selector;
+    Spinner size_selector,quantity_selector;
     TextView pname,description,discount,sellingPrice,actualPrice,size_array;
     // String text="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.";;
 
@@ -53,8 +59,7 @@ public class SwipeActivity extends NavigationDrawer implements View.OnClickListe
     private static final String TAG_MASTER = "master";
     private static final String TAG_IMAGES = "images";
     String descr,name,actual_price,cost_price,discount_tag;
-    String [] sizes,product_image_url;
-
+    String [] sizes,product_image_url,quantites={"1","2","3","4","5"};
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -146,14 +151,26 @@ public class SwipeActivity extends NavigationDrawer implements View.OnClickListe
     private void setSpinner() {
         // Spinner element
         size_selector =(Spinner) findViewById(R.id.select_size);
-// Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<String> adapter =new  ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,sizes);
-// Specify the layout to use when the list of choices appears
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        quantity_selector =(Spinner) findViewById(R.id.select_quantity);
+//// Create an ArrayAdapter using the string array and a default spinner layout
+//        ArrayAdapter<String> adapter_size =new  ArrayAdapter<String>(this,R.layout.spinner_layout,android.R.id.text1,quantites);
+//        ArrayAdapter<String> adapter_quantity =new  ArrayAdapter<String>(this,R.layout.spinner_layout,android.R.id.text1,quantites);
+//// Specify the layout to use when the list of choices appears
+//        adapter_size.setDropDownViewResource(R.layout.spinner_layout);
+//        adapter_quantity.setDropDownViewResource(R.layout.spinner_layout);
+        SpinnerAdapter adapter_size= new SpinnerAdapter(this,R.layout.spinner_layout,android.R.id.text1,sizes);
+        SpinnerAdapter adapter_quantity= new SpinnerAdapter(this,R.layout.spinner_layout,android.R.id.text1,quantites);
+
 // Apply the adapter to the spinner
-        size_selector.setAdapter(adapter);
+        size_selector.setAdapter(adapter_size);
+        quantity_selector.setAdapter(adapter_quantity);
+
+// show hint
+      //  size_selector.setSelection(adapter_size.getCount());
+  //      quantity_selector.setSelection(adapter_quantity.getCount());
 // Spinner click listener
         size_selector.setOnItemSelectedListener(this);
+        quantity_selector.setOnItemSelectedListener(this);
     }
     private void getData(JSONObject json) {
 
@@ -185,8 +202,8 @@ public class SwipeActivity extends NavigationDrawer implements View.OnClickListe
             for (int i = 0; i < sizes_array.length(); i++) {
                 JSONObject jsonobject = sizes_array.getJSONObject(i);
                 sizes[i] = jsonobject.getString("size");
-
             }
+
 
             pname=(TextView)findViewById(R.id.productName);
             pname.setText(name);

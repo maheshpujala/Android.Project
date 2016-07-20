@@ -109,24 +109,39 @@
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="center">
+                    android:layout_margin="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Size"
+                        android:textStyle="bold"
+                         android:layout_gravity="center"
+                        android:id="@+id/textView7"
+                        android:layout_weight="1" />
 
                     <Spinner
-                        android:background="@drawable/spinner_border"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="20dp"
-                        android:popupBackground="#6d6d6d"
-                        android:layout_weight="1"
+                        android:layout_width="80dp"
+                        android:layout_height="50dp"
+                        android:layout_margin="10dp"
                         android:spinnerMode="dialog"
                         android:prompt="@string/size"
                         android:gravity="center_horizontal"
                         android:id="@+id/select_size" />
-                    <Spinner
-                        android:layout_width="match_parent"
+
+                    <TextView
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_margin="20dp"
-                        android:layout_weight="1"
+                        android:text="Quantity"
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:id="@+id/textView3"
+                        android:layout_weight="1" />
+
+                    <Spinner
+                        android:layout_width="80dp"
+                        android:layout_height="50dp"
+                        android:layout_margin="10dp"
                         android:spinnerMode="dialog"
                         android:prompt="@string/quantity"
                         android:gravity="center_horizontal"

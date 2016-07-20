@@ -44,7 +44,6 @@ public class CartAdapter  extends BaseAdapter {
         LayoutInflater inflater = context.getLayoutInflater();
         rowView = inflater.inflate(R.layout.adapter_product, null, true);
         TextView productname = (TextView) rowView.findViewById(R.id.tvProductName);
-        productname.setText("HELLO WORLD");
 
         return rowView;
     }
