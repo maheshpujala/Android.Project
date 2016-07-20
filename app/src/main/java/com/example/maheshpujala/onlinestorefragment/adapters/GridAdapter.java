@@ -25,22 +25,21 @@ public GridAdapter(Context context)
         {
         inflater = LayoutInflater.from(context);
 
-        items.add(new Item("Image 1", R.drawable.q1));
-        items.add(new Item("Image 2", R.drawable.q2));
-        items.add(new Item("Image 3", R.drawable.q3));
-        items.add(new Item("Image 4", R.drawable.q4));
-        items.add(new Item("Image 5", R.drawable.q5));
-            items.add(new Item("Image 5", R.drawable.q6));
+//        items.add(new Item("Image 1", R.drawable.q1));
+//        items.add(new Item("Image 2", R.drawable.q2));
+//        items.add(new Item("Image 3", R.drawable.q3));
+//        items.add(new Item("Image 4", R.drawable.q4));
+//        items.add(new Item("Image 5", R.drawable.q5));
+            items.add(new Item("T-Shirts", R.drawable.t1));
 
-            items.add(new Item("Image 5", R.drawable.q7));
+            items.add(new Item("T-Shirts", R.drawable.t7));
 
-            items.add(new Item("Image 5", R.drawable.q8));
+            items.add(new Item("T-Shirts", R.drawable.t13));
 
-            items.add(new Item("Image 5", R.drawable.q9));
+            items.add(new Item("T-Shirts", R.drawable.t24));
 
-            items.add(new Item("Image 5", R.drawable.q10));
+            items.add(new Item("T-Shirts", R.drawable.t54));
 
-            items.add(new Item("Image 5", R.drawable.q11));
 
         }
 

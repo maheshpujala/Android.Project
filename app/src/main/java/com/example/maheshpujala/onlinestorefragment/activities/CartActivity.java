@@ -1,30 +1,23 @@
 package com.example.maheshpujala.onlinestorefragment.activities;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.maheshpujala.onlinestorefragment.R;
-import com.example.maheshpujala.onlinestorefragment.adapters.GridAdapter;
-import com.example.maheshpujala.onlinestorefragment.adapters.ListActivity;
-import com.example.maheshpujala.onlinestorefragment.adapters.NavigationDrawer;
-import com.example.maheshpujala.onlinestorefragment.adapters.ProductAdapter;
+import com.example.maheshpujala.onlinestorefragment.adapters.CartAdapter;
+import com.example.maheshpujala.onlinestorefragment.adapters.ListAdapter;
 
 /**
  * Created by maheshpujala on 4/7/16.
  */
 public class CartActivity extends AppCompatActivity {
-    String cart="mycart";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +31,7 @@ public class CartActivity extends AppCompatActivity {
 
         ListView Products = (ListView) findViewById(R.id.lvProducts);
         // lvProducts.addHeaderView(getLayoutInflater().inflate(R.layout.product_list_header, lvProducts, false));
-        Products.setAdapter(new ListActivity(this,item_count,cart));
+        Products.setAdapter(new CartAdapter(this,item_count));
         Products.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override

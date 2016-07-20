@@ -32,15 +32,15 @@
             android:theme="@style/AppTheme.ActionBar.Transparent" />
         <activity
             android:name=".activities.HomeActivity"
-            android:label="MainActivity"
+            android:label="HomeActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activities.MainSubActivity"
-            android:label="MainSubActivity"
+            android:label="ResultActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activities.SwipeActivity"
-            android:label="Swipe"
+            android:label="ProductActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activities.CartActivity"
