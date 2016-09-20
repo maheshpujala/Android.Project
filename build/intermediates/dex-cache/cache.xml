@@ -1,2 +1,187 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
+
+    <item
+        jar="/home/maheshpujala/Android.Projects/Online_Store/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth-base/9.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="48917c60ea81213ea39cbd7123996a5401106dc3">
+        <dex dex="/home/maheshpujala/Android.Projects/Online_Store/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-auth-base-9.2.1_4558b219441ac52bb9bd7da594e62405e092f95e.jar" />
+    </item>
+    <item
+        jar="/home/maheshpujala/Android.Projects/Online_Store/app/build/intermediates/exploded-aar/com.android.volley/volley/1.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="2cd4b982617e544728de0782d718a58ce1b06e3f">
+        <dex dex="/home/maheshpujala/Android.Projects/Online_Store/app/build/intermediates/pre-dexed/debug/com.android.volley-volley-1.0.0_3632cdd35952ec4ce7f86d3e37f0e4f37ea80bf3.jar" />
+    </item>
+    <item
+        jar="/home/maheshpujala/Android.Projects/Online_Store/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/9.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="819c2c3a4fb135e085445d11131d069cf9c32b2a">
+        <dex dex="/home/maheshpujala/Android.Projects/Online_Store/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-tasks-9.2.1_5f1f0688146bbaa6774019b23e42d930ec912e95.jar" />
+    </item>
+    <item
+        jar="/home/maheshpujala/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="/home/maheshpujala/Android.Projects/Online_Store/app/build/intermediates/pre-dexed/debug/picasso-2.5.2_75c59ecd534100f952eaf380b6c433d86407135f.jar" />
+    </item>
+    <item
+        jar="/home/maheshpujala/Android.Projects/Online_Store/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="421b36cf4f0d3bbd75e8f28647fccf36674ef049">
+        <dex dex="/home/maheshpujala/Android.Projects/Online_Store/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-base-9.2.1_858f0f1f0e2d4f175bdf85fcb914f532925d006b.jar" />
+    </item>
+    <item
+        jar="/home/maheshpujala/Android.Projects/Online_Store/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/9.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="5337354083e89ed67151859ab0b6b80935c60eaf">
+        <dex dex="/home/maheshpujala/Android.Projects/Online_Store/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-analytics-impl-9.2.1_39d55837c37a591cca2be16091fe19cdf6357770.jar" />
+    </item>
+    <item
+        jar="/home/maheshpujala/Android.Projects/Online_Store/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="4157816e81f0820983957687e9a6f4c1cea0f1e5">
+        <dex dex="/home/maheshpujala/Android.Projects/Online_Store/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-24.1.0_af9dc9bbc5d9f425207edd81ae8ced00cc21fb1a.jar" />
+    </item>
+    <item
+        jar="/home/maheshpujala/Android.Projects/Online_Store/app/build/intermediates/exploded-aar/com.android.support/customtabs/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="2d1eaa9e0b98f8fc4c2b989d9b30d4f1480648ac">
+        <dex dex="/home/maheshpujala/Android.Projects/Online_Store/app/build/intermediates/pre-dexed/debug/com.android.support-customtabs-23.4.0_81628a8a87b6dbd20fd031f7430447232ea2e535.jar" />
+    </item>
+    <item
+        jar="/home/maheshpujala/Android.Projects/Online_Store/app/build/intermediates/exploded-aar/com.android.support/design/24.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="8620c018c108eed501bbdb85324b79136373ea44">
+        <dex dex="/home/maheshpujala/Android.Projects/Online_Store/app/build/intermediates/pre-dexed/debug/com.android.support-design-24.1.0_7213f68959d532f674150710f28337b1fb2e8b94.jar" />
+    </item>
+    <item
+        jar="/home/maheshpujala/Android.Projects/Online_Store/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.15.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="820605b42a2d3d9cb9e6c4cc7453fb4f802aedff">
+        <dex dex="/home/maheshpujala/Android.Projects/Online_Store/app/build/intermediates/pre-dexed/debug/com.facebook.android-facebook-android-sdk-4.15.0_0b1d15e7ffeb1a3ea8d6ceb35feaa2cefbb7ba82.jar" />
+    </item>
+    <item
+        jar="/home/maheshpujala/Android.Projects/Online_Store/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/9.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="6a0f2d219f82db499ac03d5a985c4eb3e83fc422">
+        <dex dex="/home/maheshpujala/Android.Projects/Online_Store/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-analytics-9.2.1_ddcbe9212b5ed0d460a2a824290fd40697a216fd.jar" />
+    </item>
+    <item
+        jar="/home/maheshpujala/android-sdks/extras/android/m2repository/com/android/support/support-annotations/24.1.0/support-annotations-24.1.0.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="8a23146e1a8c7cb4758e3d3f62449213f1e51f67">
+        <dex dex="/home/maheshpujala/Android.Projects/Online_Store/app/build/intermediates/pre-dexed/debug/support-annotations-24.1.0_09e1d26e010c62764bd34843c180a11ca36fac70.jar" />
+    </item>
+    <item
+        jar="/home/maheshpujala/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-applinks/1.4.0/8ad21bf21784dacce5f2043afb97218cc377e835/bolts-applinks-1.4.0.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="8ad21bf21784dacce5f2043afb97218cc377e835">
+        <dex dex="/home/maheshpujala/Android.Projects/Online_Store/app/build/intermediates/pre-dexed/debug/bolts-applinks-1.4.0_67e935fa6052745d2e4568fd7b625ff1d5d5e132.jar" />
+    </item>
+    <item
+        jar="/home/maheshpujala/Android.Projects/Online_Store/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth/9.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="e1bec33f1ec5367e25676638b430b9d585f3dbec">
+        <dex dex="/home/maheshpujala/Android.Projects/Online_Store/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-auth-9.2.1_9f772cf469db95c36ff272840bb8893d70a00be7.jar" />
+    </item>
+    <item
+        jar="/home/maheshpujala/Android.Projects/Online_Store/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="d9ecde39b460470e655de6e47c05573d2d5a8bfb">
+        <dex dex="/home/maheshpujala/Android.Projects/Online_Store/app/build/intermediates/pre-dexed/debug/com.android.support-cardview-v7-23.4.0_1b16fedd87a90dc6a2f8a687de8e5222f7761528.jar" />
+    </item>
+    <item
+        jar="/home/maheshpujala/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.7/751f548c85fa49f330cecbb1875893f971b33c4e/gson-2.7.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="751f548c85fa49f330cecbb1875893f971b33c4e">
+        <dex dex="/home/maheshpujala/Android.Projects/Online_Store/app/build/intermediates/pre-dexed/debug/gson-2.7_b5d771912b60733fa2372f11c2d99279699894bb.jar" />
+    </item>
+    <item
+        jar="/home/maheshpujala/Android.Projects/Online_Store/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="d41b5d21cc9dd7d210f0ae82ac509ba7f091d611">
+        <dex dex="/home/maheshpujala/Android.Projects/Online_Store/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-iid-9.2.1_84f86da00454bd07b55912bb579a023d37fb68ff.jar" />
+    </item>
+    <item
+        jar="/home/maheshpujala/Android.Projects/Online_Store/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="8c854b30eca6c442fe842e66cd3b58c5dd08996f">
+        <dex dex="/home/maheshpujala/Android.Projects/Online_Store/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-24.1.0_e3b4e44c61a5f299b395503503144800e78143c3.jar" />
+    </item>
+    <item
+        jar="/home/maheshpujala/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="/home/maheshpujala/Android.Projects/Online_Store/app/build/intermediates/pre-dexed/debug/bolts-tasks-1.4.0_40b497346422c7e12be2d3966366872887886849.jar" />
+    </item>
+    <item
+        jar="/home/maheshpujala/Android.Projects/Online_Store/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/9.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="3627eacd7f7cafb5e8ae683992e7b2f9b7dcab1a">
+        <dex dex="/home/maheshpujala/Android.Projects/Online_Store/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-common-9.2.1_b2c7545c2256d3eea69cf0d760e0880b1055acc5.jar" />
+    </item>
+    <item
+        jar="/home/maheshpujala/Android.Projects/Online_Store/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="9340c4f95a4e3916c9ad70296e24576743743712">
+        <dex dex="/home/maheshpujala/Android.Projects/Online_Store/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-24.1.0_2fd1162bf5070c4706bc1cc50e77b7ae0d3b7a2c.jar" />
+    </item>
+    <item
+        jar="/home/maheshpujala/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.4.1/f5aa318bda4c6c8d688c9d00b90681dcd82ce636/httpcore-4.4.1.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="f5aa318bda4c6c8d688c9d00b90681dcd82ce636">
+        <dex dex="/home/maheshpujala/Android.Projects/Online_Store/app/build/intermediates/pre-dexed/debug/httpcore-4.4.1_4760ec3d07ad75f9f2c24dd972e31dc7fccc170f.jar" />
+    </item>
+    <item
+        jar="/home/maheshpujala/Android.Projects/Online_Store/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="e096a5d8343cc9c5a9f6eded36bd0f4c82f8c83e">
+        <dex dex="/home/maheshpujala/Android.Projects/Online_Store/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-24.1.0_f3e729d6f0dfd933844f67a270cd58165b6cb9e1.jar" />
+    </item>
+    <item
+        jar="/home/maheshpujala/Android.Projects/Online_Store/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/9.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="6b896c1067633db41e9c10a3a5d0919c5c4cfc8c">
+        <dex dex="/home/maheshpujala/Android.Projects/Online_Store/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-basement-9.2.1_e6f67e0ee51da5b7ea98cd5f47b0baf4b8f941d7.jar" />
+    </item>
+    <item
+        jar="/home/maheshpujala/Android.Projects/Online_Store/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="ba8e8860f7e033c3a503b682337a4bafdf56e6ee">
+        <dex dex="/home/maheshpujala/Android.Projects/Online_Store/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-24.1.0_4b2242d863d2aab5665bc8c25272cb6102bf898c.jar" />
+    </item>
+    <item
+        jar="/home/maheshpujala/Android.Projects/Online_Store/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.1.0/jars/libs/internal_impl-24.1.0.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="8c7087216946c546f85a1242a2794c0f271e092c">
+        <dex dex="/home/maheshpujala/Android.Projects/Online_Store/app/build/intermediates/pre-dexed/debug/internal_impl-24.1.0_b98c67dd320203105a233e122ffd6c953b97aab4.jar" />
+    </item>
+
+</items>

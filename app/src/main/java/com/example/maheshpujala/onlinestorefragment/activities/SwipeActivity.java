@@ -115,17 +115,18 @@ public class SwipeActivity extends NavigationDrawer implements View.OnClickListe
 // Instantiate the RequestQueue.
         RequestQueue queue = Volley.newRequestQueue(this);
         String url ="http://192.168.3.48:2490/api/v1/products/1.json?token=f64957cb4af203fcabbddefc170827d313f6ec48e3cc9e5d";
+        String  url_test="http://qa2.leapzen.com/api/v1/jobs?query=Java&sort_by=Freshness&location[]=Hyderabad&location[]=Chennai&experience[]=12&experience[]=18&experience[]=24&salary[]=100000&page=0&per_page=10";
 // Request a JsonObject response from the provided URL.
         JsonObjectRequest jsObjRequest = new JsonObjectRequest
-                (Request.Method.POST, url, null, new Response.Listener<JSONObject>() {
-
+                (Request.Method.GET, url_test, null, new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        getData(response);
-                        setSpinner();
-                        setViewPager();
-                        setTabhost();
+                        //getData(response);
+                     //   setSpinner();
+                   //     setViewPager();
+                    //    setTabhost();
                         Log.e("======================",response.toString());
+
                     }
                 }, new Response.ErrorListener() {
 
@@ -238,7 +239,11 @@ public class SwipeActivity extends NavigationDrawer implements View.OnClickListe
         shareIntent.setAction(Intent.ACTION_SEND);
         shareIntent.putExtra(Intent.EXTRA_TEXT, text);
         shareIntent.setType("text/*");
-        startActivity(Intent.createChooser(shareIntent, "Share ..."));
+        // Verify that there are applications registered to handle this intent
+        // (resolveActivity returns null if none are registered)
+        if(shareIntent.resolveActivity(getPackageManager()) != null){
+            startActivity(Intent.createChooser(shareIntent,"Share ..."));
+        }
     }
     public void setTabhost (){
         TabHost host = (TabHost)findViewById(R.id.tabhost);

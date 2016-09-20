@@ -50,7 +50,6 @@
                     android:orientation="vertical">
 
                     <GridView
-                        android:id="@+id/view_women"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:verticalSpacing="10dp"
@@ -68,7 +67,6 @@
                     android:orientation="vertical">
 
                     <GridView
-                        android:id="@+id/view_kids"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:verticalSpacing="10dp"
